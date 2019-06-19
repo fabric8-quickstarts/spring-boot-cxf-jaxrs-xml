@@ -17,11 +17,6 @@ package io.fabric8.quickstarts.cxf.jaxrs;
 
 import java.util.Arrays;
 
-import org.apache.cxf.Bus;
-import org.apache.cxf.endpoint.Server;
-import org.apache.cxf.jaxrs.JAXRSServerFactoryBean;
-import org.apache.cxf.jaxrs.swagger.Swagger2Feature;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -31,7 +26,6 @@ import org.springframework.context.annotation.ImportResource;
 @ImportResource({"classpath:endpoint.xml"})
 public class SampleRestApplication {
 
-    private Bus bus;
 
     public static void main(String[] args) {
         SpringApplication.run(SampleRestApplication.class, args);
