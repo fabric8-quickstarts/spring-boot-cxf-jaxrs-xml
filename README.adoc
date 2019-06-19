@@ -42,11 +42,11 @@ $ oc login -u developer -p developer
 $ oc new-project MY_PROJECT_NAME
 ----
 
-. Change the directory to the folder that contains the extracted quickstart application (for example, `my_openshift/spring-boot-cxf-jaxrs`) :
+. Change the directory to the folder that contains the extracted quickstart application (for example, `my_openshift/spring-boot-cxf-jaxrs-xml`) :
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ cd my_openshift/spring-boot-cxf-jaxrs
+$ cd my_openshift/spring-boot-cxf-jaxrs-xml
 ----
 
 . Build and deploy the project to the OpenShift cluster:
@@ -57,22 +57,22 @@ $ mvn clean -DskipTests fabric8:deploy -Popenshift
 ----
 
 . In your browser, navigate to the `MY_PROJECT_NAME` project in the OpenShift console.
-Wait until you can see that the pod for the `spring-boot-cxf-jaxrs` has started up.
+Wait until you can see that the pod for the `spring-boot-cxf-jaxrs-xml` has started up.
 
 == Accessing the CXF JAXRS endpoint
 
 When the example is running, a CXF JAXRS endpoint is available.
 
-If you run the example on a single-node OpenShift cluster, then the REST service is exposed at 'http://spring-boot-cxf-jaxrs-MY_PROJECT_NAME.OPENSHIFT_IP_ADDR.nip.io/services/helloservice/`.
+If you run the example on a single-node OpenShift cluster, then the REST service is exposed at 'http://spring-boot-cxf-jaxrs-xml-MY_PROJECT_NAME.OPENSHIFT_IP_ADDR.nip.io/services/helloservice/`.
 
 Notice: As it depends on your OpenShift setup, the hostname (route) might vary. Verify with `oc get routes` which hostname is valid for you.
 
-- <http://spring-boot-cxf-jaxrs-MY_PROJECT_NAME.OPENSHIFT_IP_ADDR.nip.io/services/helloservice/sayHello/FIS>
+- <http://spring-boot-cxf-jaxrs-xml-MY_PROJECT_NAME.OPENSHIFT_IP_ADDR.nip.io/services/helloservice/sayHello/FIS>
 will display "Hello FIS, Welcome to CXF RS Spring Boot World!!!"
 
 == Swagger API
 
-The example provides API documentation of the service using Swagger. You can access the API documentation from your Web browser at <http://spring-boot-cxf-jaxrs-MY_PROJECT_NAME.OPENSHIFT_IP_ADDR.nip.io/services/helloservice/swagger.json>.
+The example provides API documentation of the service using Swagger. You can access the API documentation from your Web browser at <http://spring-boot-cxf-jaxrs-xml-MY_PROJECT_NAME.OPENSHIFT_IP_ADDR.nip.io/services/helloservice/swagger.json>.
 
 == Integration Testing
 
