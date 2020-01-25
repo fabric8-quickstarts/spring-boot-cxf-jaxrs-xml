@@ -16,11 +16,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- dependency versions -->
-        <camel.version>2.21.2</camel.version>
-        <fabric8.version>2.3.7</fabric8.version>
-        <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
         <swagger-ui.version>2.1.0</swagger-ui.version>
-
+        <fuse.bom.version>7.6.0-SNAPSHOT</fuse.bom.version>
         <!-- maven plugin versions -->
         <fabric8.maven.plugin.version>3.5.40</fabric8.maven.plugin.version>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -30,23 +27,9 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>io.fabric8</groupId>
-                <artifactId>fabric8-project-bom-camel-spring-boot</artifactId>
-                <version>${fabric8.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.camel</groupId>
-                <artifactId>camel-spring-boot-dependencies</artifactId>
-                <version>${camel.version}</version>
+                <groupId>org.jboss.redhat-fuse</groupId>
+                <artifactId>fuse-springboot-bom</artifactId>
+                <version>${fuse.bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -139,9 +122,9 @@
             </plugin>
 
             <plugin>
-                <groupId>org.springframework.boot</groupId>
+                <groupId>org.jboss.redhat-fuse</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot.version}</version>
+                <version>${fuse.bom.version}</version>
                 <executions>
                     <execution>
                         <goals>
