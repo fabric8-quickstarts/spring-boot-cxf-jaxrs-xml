@@ -27,8 +27,22 @@
             <ref bean="resource"/>
         </jaxrs:serviceBeans>
         <jaxrs:features>
-            <bean class="org.apache.cxf.jaxrs.swagger.Swagger2Feature"/>
+            <ref bean="openApiFeature"/>
         </jaxrs:features>
     </jaxrs:server>
     <bean id="resource" class="io.fabric8.quickstarts.cxf.jaxrs.HelloServiceImpl"/> 
+    <bean id="customizer" class="org.apache.cxf.jaxrs.openapi.OpenApiCustomizer">
+        <property name="dynamicBasePath" value="true"/>
+    </bean>
+    <bean id="openApiFeature" class="org.apache.cxf.jaxrs.openapi.OpenApiFeature">
+        <property name="prettyPrint" value="true"/>
+        <property name="customizer">
+            <ref bean="customizer"/>
+        </property>
+        <property name="title" value="Spring Boot CXF REST Application"/>
+        <property name="contactName" value="Red Hat FUSE"/>
+        <property name="description" value="This sample project demonstrates how to use CXF JAX-RS services with Spring Boot XML Bean."/>
+        <property name="version" value="1.0.0"/>
+    </bean>
+
 </beans>
