@@ -18,7 +18,7 @@
         <!-- dependency versions -->
         <swagger-ui.version>2.1.0</swagger-ui.version>
         <fuse.bom.version>7.8.0.fuse-sb2-780033</fuse.bom.version>
-        <docker.image.version>1.7</docker.image.version>
+        <docker.image.version>1.9</docker.image.version>
 
         <!-- maven plugin versions -->
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -174,8 +174,35 @@
                                 </goals>
                             </execution>
                         </executions>
+                        <configuration>
+                            <resources>
+                                <labels>
+                                    <pod>
+                                        <property>
+                                            <name>com.company</name>
+                                            <value>Red_Hat</value>
+                                        </property>
+                                        <property>
+                                            <name>rht.prod_name</name>
+                                            <value>Red_Hat_Integration</value>
+                                        </property>
+                                        <property>
+                                            <name>rht.prod_ver</name>
+                                            <value>7.9</value>
+                                        </property>
+                                        <property>
+                                            <name>rht.comp</name>
+                                            <value>spring-boot-cxf-jaxrs-xml</value>
+                                        </property>
+                                        <property>
+                                            <name>rht.comp_ver</name>
+                                            <value>${fuse.bom.version}</value>
+                                        </property>
+                                    </pod>
+                                </labels>
+                            </resources>
+                        </configuration>
                     </plugin>
-
                 </plugins>
             </build>
         </profile>
