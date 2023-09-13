@@ -6,7 +6,7 @@
 
     <groupId>io.fabric8.quickstarts.cxf.jaxrs</groupId>
     <artifactId>spring-boot-cxf-jaxrs-xml</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>7.12.1.fuse-7_12_1-00001</version>
 
     <name>Fabric8 :: Quickstarts :: Spring-Boot :: CXF JAXRS XML</name>
     <description>Spring Boot example running a CXF JAXRS XML endpoint</description>
@@ -17,7 +17,7 @@
 
         <!-- dependency versions -->
         <swagger-ui.version>2.1.0</swagger-ui.version>
-        <fuse.bom.version>7.12.0.fuse-7_12_0-00016-redhat-00001</fuse.bom.version>
+        <fuse.bom.version>7.12.1.fuse-7_12_1-00001</fuse.bom.version>
         <docker.image.version>1.12</docker.image.version>
 
         <!-- maven plugin versions -->
